@@ -1,0 +1,35 @@
+﻿@page "/diodocs"
+
+@using DioDocsBlazorWasmApp1.Data
+
+@inject DDExcelService ddexcelservice
+@inject DDPdfService ddpdfservice
+
+@inject LicenseStrings licensestrings
+@inject AzStorageStrings azstoragestrings
+
+
+<h1>DioDocs</h1>
+
+<p>Current platform: @platformname</p>
+
+<button class="btn btn-primary" @onclick="DioDocsRun">Create</button>
+
+<p></p>
+
+<p>Status: @status</p>
+
+@code {
+    string platformname = "Blazor Wasm App (Client-Side Blazor)";
+
+    string status = "Ready";
+
+    void DioDocsRun()
+    {
+        ddexcelservice.Create(platformname, licensestrings.DioDocsExcel, azstoragestrings.Dev);
+
+        ddpdfservice.Create(platformname, licensestrings.DioDocsExcel, azstoragestrings.Dev);
+
+        status = "Finished!";
+    }
+}
