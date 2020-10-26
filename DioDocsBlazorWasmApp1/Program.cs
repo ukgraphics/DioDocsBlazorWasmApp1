@@ -28,8 +28,6 @@ namespace DioDocsBlazorWasmApp1
             builder.Services.AddSingleton<DDExcelService>();
             builder.Services.AddSingleton<DDPdfService>();
             
-           
-
             await builder.Build().RunAsync();
         }
     }

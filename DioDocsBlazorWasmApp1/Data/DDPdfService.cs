@@ -1,6 +1,5 @@
 ﻿using GrapeCity.Documents.Pdf;
 using GrapeCity.Documents.Text;
-using Microsoft.Extensions.Options;
 using System;
 using System.Drawing;
 using System.IO;
