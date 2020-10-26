@@ -22,9 +22,6 @@ namespace DioDocsBlazorWasmApp1
                                         .AddJsonStream(Assembly.GetExecutingAssembly().GetManifestResourceStream("DioDocsBlazorWasmApp1.appsettings.json"))
                                         .Build();
 
-            //builder.Services.AddTransient(_ => { return configuration.GetSection("LicenseStrings").Get<LicenseStrings>(); });
-            //builder.Services.AddTransient(_ => { return configuration.GetSection("ConnectionStrings").Get<AzStorageStrings>(); });
-
             builder.Services.AddSingleton(_ => { return configuration.GetSection("LicenseStrings").Get<LicenseStrings>(); });
             builder.Services.AddSingleton(_ => { return configuration.GetSection("ConnectionStrings").Get<AzStorageStrings>(); });
 
